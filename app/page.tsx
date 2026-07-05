@@ -270,26 +270,30 @@ export const InventoryDashboard = () => {
           <div className="flex gap-4 sm:gap-7 text-sm md:text-[16px] font-black tracking-[0.12em] uppercase">
             <button onClick={() => scrollToSection('gioi-thieu')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200">Giới thiệu</button>
             <button onClick={() => scrollToSection('hoc-van')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200">Học Vấn</button>
+            <button onClick={() => scrollToSection('kinh-nghiem')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200">Kinh Nghiệm</button>
             <button onClick={() => scrollToSection('du-an')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200">Dự Án</button>
             <button onClick={() => scrollToSection('lien-he')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200">Liên Hệ</button>
           </div>
         </nav>
       )}
 
+      {/* 4. TĂNG KÍCH THƯỚC LOADING SCREEN LÊN 5% VÀ TĂNG ĐỘ SÁNG MÀU gradient SẮC NÉT */}
       {isLoading && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center font-mono text-cyan-400 select-none bg-[#01040a] px-4">
-          <div className="relative w-24 h-24 md:w-28 md:h-28 mb-8">
-            <div className="absolute inset-0 rounded-full border-4 border-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.1)]"></div>
-            <div className="absolute inset-0 rounded-full border-4 border-t-cyan-400 border-r-emerald-400 animate-spin shadow-[0_0_20px_rgba(6,182,212,0.5)]"></div>
-          </div>
-          <div className="text-base md:text-xl font-black tracking-[0.2em] mb-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 uppercase text-center">
-            INITIALIZING SYSTEM
-          </div>
-          <div className="text-4xl md:text-5xl font-black tracking-widest text-white mb-6 drop-shadow-[0_0_20px_rgba(6,182,212,0.6)] animate-pulse">
-            {progress}<span className="text-cyan-400 text-2xl ml-0.5">%</span>
-          </div>
-          <div className="w-64 md:w-72 h-2.5 bg-slate-950 border border-cyan-500/30 rounded-full overflow-hidden p-[1px]">
-            <div className="h-full bg-gradient-to-r from-cyan-400 via-blue-500 to-emerald-400 rounded-full transition-all duration-300 ease-out" style={{ width: `${progress}%` }}></div>
+          <div className="transition-all transform scale-[1.05] flex flex-col items-center justify-center">
+            <div className="relative w-28 h-28 md:w-32 md:h-32 mb-8">
+              <div className="absolute inset-0 rounded-full border-4 border-cyan-400/20 shadow-[0_0_20px_rgba(34,211,238,0.2)]"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-t-cyan-300 border-r-emerald-300 animate-spin shadow-[0_0_30px_rgba(34,211,238,0.8)]"></div>
+            </div>
+            <div className="text-lg md:text-2xl font-black tracking-[0.25em] mb-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-emerald-300 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)] uppercase text-center">
+              INITIALIZING SYSTEM
+            </div>
+            <div className="text-5xl md:text-6xl font-black tracking-widest text-white mb-6 drop-shadow-[0_0_25px_rgba(34,211,238,0.8)] animate-pulse">
+              {progress}<span className="text-cyan-300 text-3xl ml-0.5">%</span>
+            </div>
+            <div className="w-68 md:w-76 h-3 bg-slate-950 border border-cyan-400/40 rounded-full overflow-hidden p-[1px] shadow-[0_0_10px_rgba(34,211,238,0.2)]">
+              <div className="h-full bg-gradient-to-r from-cyan-300 via-blue-400 to-emerald-300 rounded-full transition-all duration-300 ease-out" style={{ width: `${progress}%` }}></div>
+            </div>
           </div>
         </div>
       )}
@@ -302,15 +306,14 @@ export const InventoryDashboard = () => {
         
         <header id="gioi-thieu" className="relative pb-8 md:pb-14 px-4 flex flex-col items-center justify-center text-center scroll-mt-24">
           
-          {/* CĂN CHỈNH LẠI HÌNH ẢNH TRANG TRÍ NẰM NGANG BẰNG VỚI ĐOẠN VĂN THEO YÊU CẦU */}
-          <div className="absolute bottom-4 left-0 md:left-4 w-32 h-20 md:w-44 md:h-28 lg:w-56 lg:h-40 opacity-100 z-0 pointer-events-none hidden lg:block drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+          {/* 1. SỬA LỖI RESPONSIVE: XÓA hidden lg:block ĐỂ 2 ẢNH FOURZE TỰ ĐỘNG THU NHỎ VÀ HIỂN THỊ TỐT TRÊN ĐIỆN THOẠI */}
+          <div className="absolute bottom-4 left-2 md:left-4 w-20 h-14 sm:w-28 sm:h-20 md:w-44 md:h-28 lg:w-56 lg:h-40 opacity-90 z-0 pointer-events-none drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]">
             <img src="/images/Icon-fourze.png" alt="Fourze Left Element" className="w-full h-full object-contain" />
           </div>
-          <div className="absolute bottom-4 right-0 md:right-4 w-32 h-20 md:w-44 md:h-28 lg:w-56 lg:h-40 opacity-100 z-0 pointer-events-none hidden lg:block drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+          <div className="absolute bottom-4 right-2 md:right-4 w-20 h-14 sm:w-28 sm:h-20 md:w-44 md:h-28 lg:w-56 lg:h-40 opacity-90 z-0 pointer-events-none drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]">
             <img src="/images/Fourze_Logo.png" alt="Fourze Right Element" className="w-full h-full object-contain" />
           </div>
 
-          {/* DỊCH CHUYỂN "SẴN SÀNG HỢP TÁC" LÊN TRÊN CÙNG ĐÚNG VỊ TRÍ KHOANH CHỮ NHẬT ĐỎ */}
           <div className="flex justify-center mt-2 mb-10 md:mb-14">
             <div className="flex items-center gap-2 bg-[#0b132b]/90 border border-emerald-500/30 px-5 py-2 rounded-full shadow-xl select-none">
               <span className="relative flex h-3 w-3">
@@ -349,8 +352,9 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
+        {/* 3. ĐỔI TIÊU ĐỀ TRÌNH ĐỘ HỌC VẤN SANG MÀU NÂU CAM SÁNG, RÕ NÉT VÀ ĐẸP MẮT */}
         <section id="hoc-van" className="max-w-4xl mx-auto py-6 px-4 scroll-mt-24">
-          <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-cyan-400 mb-8 drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]">
+          <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-[#d97706] mb-8 drop-shadow-[0_0_12px_rgba(217,119,6,0.6)]">
             Trình Độ Học Vấn
           </h3>
           <div className="flex flex-col gap-4">
@@ -378,6 +382,7 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
+        {/* 1. SỬA LỖI RESPONSIVE: ĐẢM BẢO CHẠY ĐẸP TRÊN MOBILE CHO KHỐI CÔNG NGHỆ (BAO GỒM SQL SERVER VÀ FIGMA) */}
         <section className="py-6 px-4">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-cyan-400 mb-8 drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]">
@@ -387,11 +392,11 @@ export const InventoryDashboard = () => {
               {skills.map((skill, index) => {
                 const isTargetLogo = skill.name.includes("Odoo") || skill.name.includes("Vercel");
                 return (
-                  <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-slate-900/90 border border-cyan-500/10 hover:border-cyan-400 hover:bg-slate-800/40 transition-all duration-300 shadow-md group">
+                  <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-slate-900/90 border border-cyan-500/10 hover:border-cyan-400 hover:bg-slate-800/40 transition-all duration-300 shadow-md group w-full overflow-hidden">
                     <div className={`flex-shrink-0 flex items-center justify-center transition-transform ${isTargetLogo ? 'w-[38px] h-[38px]' : 'w-[34px] h-[34px]'}`}>
                       <img src={skill.imgSrc} alt={skill.name} className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(6,182,212,0.45)] brightness-105 contrast-105"/>
                     </div>
-                    <span className="text-white font-bold text-xs tracking-wide group-hover:text-cyan-300 transition-colors line-clamp-2">{skill.name}</span>
+                    <span className="text-white font-bold text-xs tracking-wide group-hover:text-cyan-300 transition-colors line-clamp-2 break-words">{skill.name}</span>
                   </div>
                 );
               })}
@@ -432,7 +437,6 @@ export const InventoryDashboard = () => {
             Dự Án Đã Thực Hiện
           </h3>
           
-          {/* CÂU DẪN DỰ ÁN ĐƯỢC TĂNG KÍCH THƯỚC (2%) VÀ NÂNG ĐỘ ĐẬM (EXTRABOLD) LÀM NỔI BẬT THEO YÊU CẦU */}
           <p className="text-cyan-50 font-extrabold mb-8 pl-4 md:pl-6 border-l-2 border-cyan-400 text-[13px] md:text-[17px] italic max-w-4xl mx-auto drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]">
             Trong quá trình học tập tại Trường Cao Đẳng Văn Lang Sài Gòn, tôi đã tham gia và thực hành các dự án như sau:
           </p>
@@ -479,21 +483,31 @@ export const InventoryDashboard = () => {
               );
             })}
           </div>
+        </section>
 
-          <div className="bg-slate-900/95 backdrop-blur-md border border-cyan-400/30 p-5 md:p-6 rounded-xl shadow-lg max-w-4xl mx-auto">
-            <div className="flex flex-col items-center justify-center text-center mb-4 border-b border-cyan-500/15 pb-3">
-              <h4 className="text-xs md:text-base font-bold text-slate-300 uppercase tracking-wide">
+        {/* 2. TÁCH KHỐI KINH NGHIỆM THÀNH MỤC RIÊNG - TĂNG SIZE CHỮ 5% TO RÕ ĐẸP MẮT */}
+        <section id="kinh-nghiem" className="max-w-4xl mx-auto py-10 px-4 scroll-mt-24">
+          <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-cyan-400 mb-8 drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]">
+            Kinh Nghiệm
+          </h3>
+          <div className="bg-slate-900/95 backdrop-blur-md border border-cyan-400/30 p-6 md:p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
+            <div className="flex flex-col items-center justify-center text-center mb-5 border-b border-cyan-500/15 pb-4">
+              {/* Thực tập sinh kỹ thuật mạng & hệ thống tăng kích thước 5% */}
+              <h4 className="text-[14.5px] md:text-[17px] font-bold text-slate-300 uppercase tracking-wide">
                 Thực tập sinh kỹ thuật mạng & hệ thống:
               </h4>
-              <p className="text-cyan-400 font-black text-base md:text-xl tracking-widest mt-2 uppercase drop-shadow-[0_0_12px_rgba(6,182,212,0.5)] animate-pulse">
+              {/* 5. Công ty DV&GP Nguyên Khanh tăng 5% kích cỡ, màu sắc tươi sáng nét hơn */}
+              <p className="text-[#f59e0b] font-black text-lg md:text-2xl tracking-widest mt-2 uppercase drop-shadow-[0_0_15px_rgba(245,158,11,0.5)] animate-pulse">
                 Công ty DV&GP Nguyên Khanh
               </p>
             </div>
             
-            <p className="text-slate-300 font-semibold mb-2 text-xs pl-2">
+            {/* Nội dung mô tả tăng 5% kích cỡ chữ */}
+            <p className="text-slate-300 font-semibold mb-3 text-[13.5px] md:text-[14.5px] pl-2 leading-relaxed">
               Trực tiếp tham gia khảo sát, triển khai and bàn giao hạ tầng kỹ thuật công nghệ cho các cơ sở giáo dục:
             </p>
-            <ul className="list-disc list-inside text-slate-300 space-y-1 ml-2 text-xs font-semibold">
+            {/* Các gạch đầu dòng tăng 5% kích cỡ chữ */}
+            <ul className="list-disc list-inside text-slate-300 space-y-2 ml-2 text-[13.5px] md:text-[14.5px] font-semibold leading-relaxed">
               <li>Lắp đặt hệ thống đường dây mạng truyền tải dữ liệu và Camera tại Trường THCS Bình Lợi Trung.</li>
               <li>Lắp đặt cấu trúc thiết bị phần cứng and thiết lập hệ thống loa phát thanh tại Trường Mầm Non 29.</li>
             </ul>
@@ -667,6 +681,7 @@ export const InventoryDashboard = () => {
             
             <div className="flex flex-wrap justify-center gap-3 sm:gap-5 text-xs sm:text-sm font-extrabold uppercase tracking-wider">
               <button onClick={() => scrollToSection('gioi-thieu')} className="text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Giới thiệu</button>
+              <button onClick={() => scrollToSection('kinh-nghiem')} className="text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Kinh Nghiệm</button>
               <button onClick={() => scrollToSection('du-an')} className="text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Dự Án</button>
               <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-cyan-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200 flex items-center gap-1">
                 <span>▲</span> Lên Đầu Trang

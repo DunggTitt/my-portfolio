@@ -184,9 +184,15 @@ export const InventoryDashboard = () => {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-[#02050f] text-slate-100 pb-12 relative overflow-hidden scroll-smooth text-[14px]">
+    /* THIẾT LẬP FONT-SANS ĐỒNG NHẤT TOÀN DIỆN CHO WEB */
+    <div className="min-h-screen bg-[#02050f] text-slate-100 pb-12 relative overflow-hidden scroll-smooth text-[14px] font-sans antialiased">
       
+      {/* KHỐI STYLE LIÊN KẾT GOOGLE FONT INTER HIỂN THỊ TIẾNG VIỆT SIÊU NÉT */}
       <style dangerouslySetInnerHTML={{ __html: `
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+        body, html, button, span, p, h1, h2, h3, h4, a, div {
+          font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+        }
         .glitch-text {
           position: relative;
           color: white;
@@ -285,7 +291,7 @@ export const InventoryDashboard = () => {
               <div className="absolute inset-0 rounded-full border-[8px] border-t-blue-500 border-r-cyan-400 border-b-blue-600 border-l-cyan-500 animate-spin shadow-[0_0_40px_rgba(34,211,238,0.9)]"></div>
             </div>
 
-            <div className="text-3xl md:text-4xl font-extrabold tracking-[0.1em] mb-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.9)] uppercase font-sans">
+            <div className="text-3xl md:text-4xl font-extrabold tracking-[0.1em] mb-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.9)] uppercase">
               TIEN DUNG
             </div>
 
@@ -340,7 +346,7 @@ export const InventoryDashboard = () => {
               </div>
             </div>
 
-            <div id="gioi-thieu" className="lg:col-span-8 order-1 lg:order-2 px-2 sm:px-4 scroll-mt-28">
+            <div id="gioi-thieu" className="lg:col-span-8 order-1 lg:order-2 py-36 px-2 sm:px-4 scroll-mt-12">
               <h3 className="text-2xl md:text-3xl font-black uppercase tracking-[0.2em] text-white text-center mb-6 drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">
                 Về bản thân tôi
               </h3>
@@ -497,11 +503,11 @@ export const InventoryDashboard = () => {
               return (
                 <div 
                   key={project.id} 
-                  className={`group rounded-2xl overflow-hidden border shadow-xl transition-all duration-300 flex flex-col justify-between p-1 min-h-[460px] ${themeStyles[project.themeColor]}`}
+                  className={`group rounded-2xl overflow-hidden border shadow-xl transition-all duration-300 flex flex-col justify-between p-1 min-h-[460px] ${project.themeColor === 'blue' ? 'hover:border-cyan-400 border-blue-500/40 bg-[#0e1326] text-cyan-400' : project.themeColor === 'purple' ? 'hover:border-purple-300 border-purple-500/40 bg-[#0e1326] text-purple-400' : 'hover:border-yellow-400 border-yellow-600/40 bg-[#0e1326] text-yellow-400'}`}
                 >
                   <div>
                     <div className="p-5 border-b border-slate-800/80 bg-[#070a14]">
-                      <span className="font-bold text-xs uppercase tracking-wider block mb-1 opacity-80">{project.subTitle}</span>
+                      <span className={`font-bold text-xs uppercase block mb-1 ${project.themeColor === 'blue' ? 'text-cyan-400' : project.themeColor === 'purple' ? 'text-purple-400' : 'text-yellow-400'}`}>{project.subTitle}</span>
                       <h4 className="text-base md:text-lg font-bold text-white tracking-wide">{project.title}</h4>
                     </div>
                     
@@ -510,7 +516,7 @@ export const InventoryDashboard = () => {
                         {project.shortDesc}
                       </p>
 
-                      <div className="rounded-xl bg-[#030611] p-4 border border-slate-800/80 font-mono text-[11px] text-slate-300 leading-relaxed overflow-x-auto whitespace-pre select-all max-h-[160px] shadow-inner custom-scrollbar">
+                      <div className="rounded-xl bg-[#030611] p-4 border border-slate-800/80 font-mono text-[11px] text-slate-300 leading-relaxed overflow-x-auto whitespace-pre select-all max-h-[160px] custom-scrollbar">
                         {project.codeSnippet}
                       </div>
                     </div>
@@ -519,7 +525,7 @@ export const InventoryDashboard = () => {
                   <div className="p-5 pt-0">
                     <button 
                       onClick={() => setActiveProjectModal(project)} 
-                      className="w-full text-center text-xs font-bold py-2.5 rounded-xl border border-slate-700 bg-[#050814] text-slate-200 hover:bg-slate-800 hover:text-white hover:border-cyan-400 transition-all duration-200 shadow-md"
+                      className="w-full text-center text-xs font-bold py-2.5 rounded-xl border border-slate-700 bg-[#050814] text-slate-200 hover:bg-slate-800 hover:border-cyan-400 transition-all duration-200 shadow-md"
                     >
                       Xem chi tiết cấu trúc
                     </button>
@@ -568,37 +574,25 @@ export const InventoryDashboard = () => {
             >
               <button 
                 onClick={() => setActiveProjectModal(null)}
-                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all select-none"
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white select-none"
               >
                 <span className="text-lg font-bold">✕</span>
               </button>
 
               <div className="mb-4">
-                <span className={`text-xs font-bold uppercase tracking-widest block mb-1 ${
-                  activeProjectModal.themeColor === 'blue' ? 'text-cyan-400' : 
-                  activeProjectModal.themeColor === 'purple' ? 'text-purple-400' : 
-                  'text-yellow-400'
-                }`}>
-                  {activeProjectModal.subTitle}
-                </span>
-                <h3 className="text-base md:text-lg font-black text-white tracking-wide uppercase pr-8">
+                <span className={`text-xs font-bold uppercase block mb-1 ${activeProjectModal.themeColor === 'blue' ? 'text-cyan-400' : activeProjectModal.themeColor === 'purple' ? 'text-purple-400' : 'text-yellow-400'}`}>{activeProjectModal.subTitle}</span>
+                <h3 className="text-base md:text-lg font-black text-white uppercase pr-8">
                   {activeProjectModal.title}
                 </h3>
               </div>
 
               <div className="text-[13px] text-slate-300 space-y-3 leading-relaxed font-semibold">
-                <div className="bg-slate-950/50 p-3 rounded-lg border border-slate-900 text-slate-400 text-xs italic">
+                <div className="bg-slate-950/50 p-3 rounded-lg text-slate-400 text-xs italic">
                   {activeProjectModal.shortDesc}
                 </div>
 
                 <div>
-                  <p className={`font-bold text-xs mb-2 ${
-                    activeProjectModal.themeColor === 'blue' ? 'text-cyan-400' : 
-                    activeProjectModal.themeColor === 'purple' ? 'text-purple-400' : 
-                    'text-yellow-400'
-                  }`}>
-                    {activeProjectModal.processTitle}
-                  </p>
+                  <p className={`font-bold text-xs mb-2 ${activeProjectModal.themeColor === 'blue' ? 'text-cyan-400' : activeProjectModal.themeColor === 'purple' ? 'text-purple-400' : 'text-yellow-400'}`}>{activeProjectModal.processTitle}</p>
                   <ul className="space-y-2">
                     {activeProjectModal.steps.map((step, idx) => (
                       <li key={idx} className="flex gap-2 items-start text-xs text-slate-300">
@@ -610,18 +604,12 @@ export const InventoryDashboard = () => {
                 </div>
 
                 <div className="pt-2 border-t border-slate-900">
-                  <p className={`font-bold text-xs mb-2 ${
-                    activeProjectModal.themeColor === 'blue' ? 'text-cyan-400' : 
-                    activeProjectModal.themeColor === 'purple' ? 'text-purple-400' : 
-                    'text-yellow-400'
-                  }`}>
-                    {activeProjectModal.toolsTitle}
-                  </p>
+                  <p className={`font-bold text-xs mb-2 ${activeProjectModal.themeColor === 'blue' ? 'text-cyan-400' : activeProjectModal.themeColor === 'purple' ? 'text-purple-400' : 'text-yellow-400'}`}>{activeProjectModal.toolsTitle}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {activeProjectModal.tools.map((tool, idx) => (
                       <span 
                         key={idx} 
-                        className="bg-slate-950 text-slate-200 px-2.5 py-1 rounded-md text-[11px] font-bold border border-slate-800 shadow-sm"
+                        className="bg-slate-950 text-slate-200 px-2.5 py-1 rounded-md text-[11px] font-bold border border-slate-800"
                       >
                         {tool}
                       </span>
@@ -633,7 +621,7 @@ export const InventoryDashboard = () => {
               <div className="mt-6 pt-2">
                 <button 
                   onClick={() => setActiveProjectModal(null)}
-                  className="w-full py-2 bg-slate-950 text-xs font-bold text-slate-400 rounded-lg border border-slate-800 hover:text-white hover:bg-slate-900 transition-colors"
+                  className="w-full py-2 bg-slate-950 text-xs font-bold text-slate-400 rounded-lg border border-slate-800 hover:text-white"
                 >
                   Đóng lại
                 </button>
@@ -719,10 +707,10 @@ export const InventoryDashboard = () => {
             <div>© 2026 Nguyễn Trần Tiến Dũng. Portfolio Modules.</div>
             
             <div className="flex flex-wrap justify-center gap-3 sm:gap-5 text-xs sm:text-sm font-extrabold uppercase tracking-wider">
-              <button onClick={() => scrollToSection('gioi-thieu')} className="text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Giới thiệu</button>
-              <button onClick={() => scrollToSection('du-an')} className="text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Dự Án</button>
-              <button onClick={() => scrollToSection('kinh-nghiem')} className="text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Kinh Nghiệm</button>
-              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-cyan-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200 flex items-center gap-1">
+              <button onClick={() => scrollToSection('gioi-thieu')} className="text-slate-400 hover:text-cyan-400 transition-all duration-200">Giới thiệu</button>
+              <button onClick={() => scrollToSection('du-an')} className="text-slate-400 hover:text-cyan-400 transition-all duration-200">Dự Án</button>
+              <button onClick={() => scrollToSection('kinh-nghiem')} className="text-slate-400 hover:text-cyan-400 transition-all duration-200">Kinh Nghiệm</button>
+              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-cyan-400 hover:text-white transition-all duration-200 flex items-center gap-1">
                 <span>▲</span> Lên Đầu Trang
               </button>
             </div>

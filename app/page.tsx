@@ -154,7 +154,7 @@ export const InventoryDashboard = () => {
     { name: 'Java Swing', imgSrc: '/logos/Java.png' },
     { name: 'C/C++', imgSrc: '/logos/Cpp.png' },
     { name: 'MySQL', imgSrc: '/logos/MySQL.png' },
-    { name: 'SQL Server Management Studio 20', imgSrc: '/logos/sql_server_management_studio.png' },
+    { name: 'SQL Server Management Studio 20', imgSrc: '/logos/SQL_Server_Management_Studio.png' },
     { name: 'Apache NetBeans', imgSrc: '/logos/Apache_NetBeans.png' },
     { name: 'Eclipse', imgSrc: '/logos/Eclipse.png' },
     { name: 'Visual Studio Code', imgSrc: '/logos/VS Code.png' },
@@ -163,7 +163,7 @@ export const InventoryDashboard = () => {
     { name: 'n8n.io - Workflow Automation', imgSrc: '/logos/n8n.png' },
     { name: 'Vercel', imgSrc: '/logos/Vercel-Logo.png' },
     { name: 'VMware Workstation Pro', imgSrc: '/logos/Vmware.png' },
-    { name: 'Figma', imgSrc: '/logos/figma.png' },
+    { name: 'Figma', imgSrc: '/logos/Figma.png' },
     { name: 'Canva Design', imgSrc: '/logos/Canva.png' }
   ];
 

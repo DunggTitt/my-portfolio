@@ -674,7 +674,7 @@ export const InventoryDashboard = () => {
                   <div className="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-base">📍</div>
                   <div>
                     <h4 className="text-white font-bold text-xs">Địa chỉ</h4>
-                    <p className="text-slate-300 font-extrabold text-xs">Thành Phố Hồ Chí Minh</p>
+                    <p className="text-slate-300 font-extrabold text-xs">Phường Hiệp Bình, Thành Phố Hồ Chí Minh</p>
                   </div>
                 </div>
               </div>

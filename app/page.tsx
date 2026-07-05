@@ -37,7 +37,7 @@ export default function Home() {
     {
       id: 1,
       subTitle: "Dự án 01",
-      title: "Hệ Thống Đặt Vé Xe",
+      title: "Hệ thống Đặt vé xe",
       shortDesc: "Hệ thống hỗ trợ quản lý quy trình phân phối vé xe khách, đặt chỗ trước và giám sát doanh thu tổng cục thời gian thực.",
       codeSnippet: `// Database Connection & Ticket Mapping
 import java.sql.Connection;
@@ -61,7 +61,7 @@ public class TicketSystem {
     {
       id: 2,
       subTitle: "Dự án 02",
-      title: "Web Quản Lý Kho Hàng",
+      title: "Web Quản lý kho hàng",
       shortDesc: "Ứng dụng nền tảng Web cho phép cập nhật, theo dõi lượng vật tư xuất nhập kho và lập báo cáo tự động cho thủ kho.",
       codeSnippet: `// Inventory Analytics Hooks
 import React, { useState, useEffect } from 'react';
@@ -262,7 +262,6 @@ export const InventoryDashboard = () => {
         ></div>
       )}
 
-      {/* ĐÃ ĐẢO THỨ TỰ THANH MENU: DỰ ÁN TRƯỚC - KINH NGHIỆM SAU ĐÚNG THEO PHÂN KHỐI WEB */}
       {!isLoading && (
         <nav className="fixed top-0 left-0 right-0 z-40 bg-[#02050f]/80 backdrop-blur-md border-b border-cyan-500/10 px-4 md:px-6 py-4 shadow-lg flex justify-between items-center">
           <div className="text-2xl md:text-3xl font-black tracking-widest text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] select-none">
@@ -291,7 +290,7 @@ export const InventoryDashboard = () => {
             </div>
 
             <div className="text-xs md:text-sm font-bold tracking-[0.18em] mb-5 text-blue-400/90 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)] uppercase">
-              INITIALIZING SYSTEM ^_^
+              INITIALIZING SYSTEM
             </div>
 
             <div className="text-5xl md:text-6xl font-black tracking-widest text-white mb-6 drop-shadow-[0_0_25px_rgba(59,130,246,0.8)]">
@@ -312,16 +311,9 @@ export const InventoryDashboard = () => {
 
       <div className="relative z-10 pt-24 md:pt-28">
         
-        <header id="gioi-thieu" className="relative pb-8 md:pb-14 px-4 flex flex-col items-center justify-center text-center scroll-mt-24">
+        <header className="relative pb-8 md:pb-14 px-4 max-w-6xl mx-auto">
           
-          <div className="absolute bottom-4 left-2 md:left-4 w-20 h-14 sm:w-28 sm:h-20 md:w-44 md:h-28 lg:w-56 lg:h-40 opacity-90 z-0 pointer-events-none drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]">
-            <img src="/images/Icon-fourze.png" alt="Fourze Left Element" className="w-full h-full object-contain" />
-          </div>
-          <div className="absolute bottom-4 right-2 md:right-4 w-20 h-14 sm:w-28 sm:h-20 md:w-44 md:h-28 lg:w-56 lg:h-40 opacity-90 z-0 pointer-events-none drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]">
-            <img src="/images/Fourze_Logo.png" alt="Fourze Right Element" className="w-full h-full object-contain" />
-          </div>
-
-          <div className="flex justify-center mt-2 mb-10 md:mb-14">
+          <div className="flex justify-center mt-2 mb-24 text-center">
             <div className="flex items-center gap-2 bg-[#0b132b]/90 border border-emerald-500/30 px-5 py-2 rounded-full shadow-xl select-none">
               <span className="relative flex h-3 w-3">
                 <span className="animate-fast-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-90 shadow-[0_0_10px_rgba(52,211,153,0.8)]"></span>
@@ -333,15 +325,46 @@ export const InventoryDashboard = () => {
             </div>
           </div>
 
-          {!isLoading && <GlitchTitle text="Nguyễn Trần Tiến Dũng" />}
-          
-          <h2 className="text-xl md:text-2xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-yellow-400 drop-shadow-[0_0_10px_rgba(6,182,212,0.3)]">
-            <span className="text-yellow-400 font-mono">&gt;</span> Full Stack Developer <span className="animate-pulse">_</span>
-          </h2>
-          <p className="max-w-xl mx-auto text-slate-300 text-xs md:text-[14px] leading-relaxed font-semibold px-2 relative z-10">
-            Sinh viên IT chuyên ngành Công Nghệ Thông Tin tại Trường Cao Đẳng Văn Lang Sài Gòn.<br />
-            Sở hữu tư duy logic cùng nền tảng vững chắc về cơ sở dữ liệu, tôi luôn nỗ lực tối ưu hóa hệ thống cốt lõi và kiến tạo nên những trải nghiệm Web mượt mà, toàn diện nhất.
-          </p>
+          <div className="text-center mb-24">
+            {!isLoading && <GlitchTitle text="Nguyễn Trần Tiến Dũng" />}
+            <h2 className="text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-500 drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]">
+              <span className="text-cyan-400 font-mono">&gt;</span> Full Stack Developer <span className="animate-pulse">_</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mt-4">
+            
+            <div className="lg:col-span-2 flex justify-center order-2 lg:order-1">
+              <div className="w-24 h-18 sm:w-32 sm:h-24 md:w-40 md:h-28 lg:w-48 lg:h-36 object-contain drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+                <img src="/images/Icon-fourze.png" alt="Fourze Left Element" className="w-full h-full object-contain" />
+              </div>
+            </div>
+
+            <div id="gioi-thieu" className="lg:col-span-8 order-1 lg:order-2 px-2 sm:px-4 scroll-mt-28">
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-[0.2em] text-white text-center mb-6 drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">
+                Về bản thân tôi
+              </h3>
+              
+              <div className="text-slate-300 text-[15px] md:text-[15.5px] leading-relaxed font-semibold space-y-4 text-justify">
+                <p>
+                  Sinh viên chuyên ngành Công nghệ Thông tin tại Trường Cao Đẳng Văn Lang Sài Gòn với niềm đam mê phát triển phần mềm và xây dựng các giải pháp công nghệ hiện đại. Tôi sở hữu tư duy logic, khả năng phân tích hệ thống cùng nền tảng kiến thức vững chắc về cơ sở dữ liệu, phát triển Web và lập trình.
+                </p>
+                <p>
+                  Luôn đặt hiệu quả và trải nghiệm người dùng làm trọng tâm, tôi hướng đến việc tối ưu hóa kiến trúc hệ thống, nâng cao hiệu năng ứng dụng và xây dựng các sản phẩm Web ổn định, bảo mật, dễ mở rộng.
+                </p>
+                <p>
+                  Với tinh thần cầu tiến, trách nhiệm và ham học hỏi, tôi luôn sẵn sàng tiếp thu những công nghệ mới, tích lũy kinh nghiệm thực tế và không ngừng hoàn thiện bản thân để trở thành một kỹ sư phần mềm có năng lực và tạo ra giá trị bền vững cho doanh nghiệp.
+                </p>
+              </div>
+            </div>
+
+            <div className="lg:col-span-2 flex justify-center order-3 lg:order-3">
+              <div className="w-24 h-18 sm:w-32 sm:h-24 md:w-40 md:h-28 lg:w-48 lg:h-36 object-contain drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+                <img src="/images/Fourze_Logo.png" alt="Fourze Right Element" className="w-full h-full object-contain" />
+              </div>
+            </div>
+
+          </div>
         </header>
 
         <section className="max-w-4xl mx-auto py-6 px-4 grid md:grid-cols-2 gap-6 scroll-mt-24">
@@ -359,32 +382,49 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
+        {/* TRÌNH ĐỘ HỌC VẤN: 2 KHUNG ĐÃ ĐƯỢC TĂNG 5% KÍCH THƯỚC VÀ CHỮ TRONG ĐỒNG ĐỀU SIÊU ĐẸP MẮT */}
         <section id="hoc-van" className="max-w-4xl mx-auto py-6 px-4 scroll-mt-24">
           <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-[#d97706] mb-8 drop-shadow-[0_0_12px_rgba(217,119,6,0.6)]">
             Trình Độ Học Vấn
           </h3>
-          <div className="flex flex-col gap-4">
-            <div className="bg-slate-900/80 backdrop-blur-md border border-cyan-500/20 p-4 md:p-5 rounded-xl shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] transition-all duration-300 flex flex-col sm:flex-row sm:justify-between sm:items-center group">
+          <div className="flex flex-col gap-5"> {/* Tăng khoảng cách giữa 2 khung */}
+            
+            {/* Khung 1: Tăng kích thước 5% bằng padding (p-5 md:p-6.5) và tăng size chữ bên trong 5% */}
+            <div className="bg-slate-900/80 backdrop-blur-md border border-cyan-500/20 p-5 md:p-[26px] rounded-xl shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] transition-all duration-300 flex flex-col sm:flex-row sm:justify-between sm:items-center group">
               <div>
-                <h4 className="text-sm md:text-base font-bold text-white tracking-wide group-hover:text-cyan-300 transition-colors">Trường Trung cấp Nghề Bình Thạnh</h4>
-                <p className="text-cyan-400 font-bold text-xs md:text-sm mt-0.5">Chuyên ngành: Quản Trị Mạng</p>
-                <p className="text-slate-400 text-[11px] md:text-xs mt-0.5 font-medium">Trạng thái: Tốt nghiệp ngày 25/04/2024 — Chứng chỉ tiếng Anh: A2</p>
+                <h4 className="text-[14.5px] md:text-[17px] font-black text-white tracking-wide group-hover:text-cyan-300 transition-colors">
+                  Trường Trung cấp Nghề Bình Thạnh
+                </h4>
+                <p className="text-cyan-400 font-bold text-[12.5px] md:text-[14.5px] mt-1">
+                  Chuyên ngành: Quản Trị Mạng
+                </p>
+                <p className="text-slate-400 text-[11.5px] md:text-[12.5px] mt-1 font-semibold">
+                  Trạng thái: Tốt nghiệp ngày 25/04/2024 — Chứng chỉ tiếng Anh: A2
+                </p>
               </div>
-              <span className="text-[11px] md:text-xs font-bold text-cyan-300 bg-cyan-950/60 border border-cyan-400/40 px-3 md:px-4 py-1.5 rounded-full mt-2 sm:mt-0 w-max shadow-sm">
+              <span className="text-[11.5px] md:text-[12.5px] font-black text-cyan-300 bg-cyan-950/60 border border-cyan-400/40 px-3.5 md:px-4.5 py-2 rounded-full mt-2 sm:mt-0 w-max shadow-sm tracking-wide">
                 Niên khóa: 2021 - 2024
               </span>
             </div>
 
-            <div className="bg-slate-900/80 backdrop-blur-md border border-cyan-500/20 p-4 md:p-5 rounded-xl shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300 flex flex-col sm:flex-row sm:justify-between sm:items-center group">
+            {/* Khung 2: Tăng kích thước 5% bằng padding (p-5 md:p-6.5) và tăng size chữ bên trong 5% */}
+            <div className="bg-slate-900/80 backdrop-blur-md border border-cyan-500/20 p-5 md:p-[26px] rounded-xl shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300 flex flex-col sm:flex-row sm:justify-between sm:items-center group">
               <div>
-                <h4 className="text-sm md:text-base font-bold text-white tracking-wide group-hover:text-emerald-300 transition-colors">Trường Cao Đẳng Văn Lang Sài Gòn</h4>
-                <p className="text-emerald-400 font-bold text-xs md:text-sm mt-0.5">Khoa: Công Nghệ Thiết Kế — Chuyên ngành: Công Nghệ Thông Tin</p>
-                <p className="text-slate-400 text-[11px] md:text-xs mt-0.5 font-medium">Trạng thái: Tốt nghiệp năm 2026</p>
+                <h4 className="text-[14.5px] md:text-[17px] font-black text-white tracking-wide group-hover:text-emerald-300 transition-colors">
+                  Trường Cao Đẳng Văn Lang Sài Gòn
+                </h4>
+                <p className="text-emerald-400 font-bold text-[12.5px] md:text-[14.5px] mt-1">
+                  Khoa: Công Nghệ Thiết Kế — Chuyên ngành: Công Nghệ Thông Tin
+                </p>
+                <p className="text-slate-400 text-[11.5px] md:text-[12.5px] mt-1 font-semibold">
+                  Trạng thái: Tốt nghiệp năm 2026
+                </p>
               </div>
-              <span className="text-[11px] md:text-xs font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-400/40 px-3 md:px-4 py-1.5 rounded-full mt-2 sm:mt-0 w-max shadow-sm">
+              <span className="text-[11.5px] md:text-[12.5px] font-black text-emerald-400 bg-emerald-950/60 border border-emerald-400/40 px-3.5 md:px-4.5 py-2 rounded-full mt-2 sm:mt-0 w-max shadow-sm tracking-wide">
                 Niên khóa: 2024 - 2026
               </span>
             </div>
+
           </div>
         </section>
 
@@ -437,7 +477,6 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
-        {/* PHÂN KHỐI DỰ ÁN NẰM TRÊN THEO ĐÚNG CẤU TRÚC GỐC */}
         <section id="du-an" className="max-w-6xl mx-auto py-10 px-4 scroll-mt-24">
           <h3 className="text-2xl md:text-4xl font-black text-white mb-6 text-center uppercase tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">
             Dự Án Đã Thực Hiện
@@ -491,7 +530,6 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
-        {/* PHÂN KHỐI KINH NGHIỆM NẰM DƯỚI KHỐI DỰ ÁN */}
         <section id="kinh-nghiem" className="max-w-4xl mx-auto py-10 px-4 scroll-mt-24">
           <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-cyan-400 mb-8 drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]">
             Kinh Nghiệm
@@ -507,7 +545,10 @@ export const InventoryDashboard = () => {
             </div>
             
             <p className="text-slate-300 font-semibold mb-3 text-[13.5px] md:text-[14.5px] pl-2 leading-relaxed">
-              Trực tiếp tham gia khảo sát, triển khai and bàn giao hạ tầng kỹ thuật công nghệ cho các cơ sở giáo dục:
+              Trực tiếp tham gia khảo sát, triển khai và bàn giao hạ tầng kỹ thuật công nghệ cho các cơ sở giáo dục.
+            </p>
+            <p className="text-slate-300 font-semibold mb-3 text-[13.5px] md:text-[14.5px] pl-2 leading-relaxed">
+              Trong quá trình Thực tập tôi đã được các anh chị bên Công ty chỉ dạy tận tình và học hỏi được rất nhiều thứ, sau đó tôi được thực hành công việc như:
             </p>
             <ul className="list-disc list-inside text-slate-300 space-y-2 ml-2 text-[13.5px] md:text-[14.5px] font-semibold leading-relaxed">
               <li>Lắp đặt hệ thống đường dây mạng truyền tải dữ liệu và Camera tại Trường THCS Bình Lợi Trung.</li>
@@ -561,11 +602,7 @@ export const InventoryDashboard = () => {
                   <ul className="space-y-2">
                     {activeProjectModal.steps.map((step, idx) => (
                       <li key={idx} className="flex gap-2 items-start text-xs text-slate-300">
-                        <span className={
-                          activeProjectModal.themeColor === 'blue' ? 'text-cyan-400' : 
-                          activeProjectModal.themeColor === 'purple' ? 'text-purple-400' : 
-                          'text-yellow-400'
-                        }>•</span>
+                        <span>•</span>
                         <span>{step}</span>
                       </li>
                     ))}
@@ -677,7 +714,6 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
-        {/* ĐẢO THỨ TỰ FOOTER ĐIỀU HƯỚNG DƯỚI CUỐI TRANG ĐỒNG BỘ: DỰ ÁN TRƯỚC - KINH NGHIỆM SAU */}
         <footer className="max-w-4xl mx-auto border-t border-slate-800/60 pt-6 px-4 mt-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-slate-400 text-center sm:text-left">
             <div>© 2026 Nguyễn Trần Tiến Dũng. Portfolio Modules.</div>
@@ -692,7 +728,7 @@ export const InventoryDashboard = () => {
             </div>
           </div>
         </footer>
-
+        
       </div>
     </div>
   );

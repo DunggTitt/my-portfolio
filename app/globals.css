@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-load-width: loadWidth 1.5s ease-out forwards;
+  --animate-fade-out-page: fadeOutPage 0.3s ease-out 1.6s forwards;
+}
+
+@keyframes loadWidth {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes fadeOutPage {
+  0% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}

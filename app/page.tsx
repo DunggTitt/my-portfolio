@@ -154,7 +154,7 @@ export const InventoryDashboard = () => {
     { name: 'Java Swing', imgSrc: '/logos/Java.png' },
     { name: 'C/C++', imgSrc: '/logos/Cpp.png' },
     { name: 'MySQL', imgSrc: '/logos/MySQL.png' },
-    { name: 'SQL Server Management Studio 20', imgSrc: '/logos/SQL_Server_Management_Studio.png' },
+    { name: 'SQL Server Management Studio', imgSrc: '/logos/SQL_Server_Management_Studio.png' },
     { name: 'Apache NetBeans', imgSrc: '/logos/Apache_NetBeans.png' },
     { name: 'Eclipse', imgSrc: '/logos/Eclipse.png' },
     { name: 'Visual Studio Code', imgSrc: '/logos/VS Code.png' },

@@ -383,7 +383,7 @@ export const InventoryDashboard = () => {
         </section>
 
         {/* TRÌNH ĐỘ HỌC VẤN: 2 KHUNG ĐÃ ĐƯỢC TĂNG 5% KÍCH THƯỚC VÀ CHỮ TRONG ĐỒNG ĐỀU SIÊU ĐẸP MẮT */}
-        <section id="hoc-van" className="max-w-4xl mx-auto py-6 px-4 scroll-mt-24">
+        <section id="hoc-van" className="max-w-4xl mx-auto py-30 px-4 scroll-mt-12">
           <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-[#d97706] mb-8 drop-shadow-[0_0_12px_rgba(217,119,6,0.6)]">
             Trình Độ Học Vấn
           </h3>
@@ -428,7 +428,7 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
-        <section className="py-6 px-4">
+        <section className="py-30 px-4">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-cyan-400 mb-8 drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]">
               Thành Thạo Các Công Nghệ
@@ -449,7 +449,7 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
-        <section className="py-8 bg-slate-950/40 border-y border-cyan-500/10 my-4 overflow-hidden select-none">
+        <section className="py-30 bg-slate-950/40 border-y border-cyan-500/10 my-4 overflow-hidden select-none">
           <div className="max-w-4xl mx-auto px-4 mb-6 flex justify-center items-center">
             <h3 className="text-3xl md:text-5xl font-black tracking-[0.3em] uppercase text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-yellow-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]">
               ShowCase
@@ -477,7 +477,7 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
-        <section id="du-an" className="max-w-6xl mx-auto py-10 px-4 scroll-mt-24">
+        <section id="du-an" className="max-w-6xl mx-auto py-30 px-4 scroll-mt-2">
           <h3 className="text-2xl md:text-4xl font-black text-white mb-6 text-center uppercase tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">
             Dự Án Đã Thực Hiện
           </h3>
@@ -642,7 +642,7 @@ export const InventoryDashboard = () => {
           </div>
         )}
 
-        <section id="lien-he" className="max-w-4xl mx-auto py-6 px-4 mb-4 scroll-mt-24">
+        <section id="lien-he" className="max-w-4xl mx-auto py-40 px-4 mb-4 scroll-mt-12">
           <div className="bg-slate-900/90 backdrop-blur-md border border-cyan-400/20 p-5 md:p-6 rounded-xl shadow-xl">
             <h3 className="text-2xl md:text-3xl font-black text-cyan-300 mb-6 text-center uppercase tracking-widest">
               Thông Tin Liên Hệ

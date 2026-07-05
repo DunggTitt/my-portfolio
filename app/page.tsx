@@ -37,7 +37,7 @@ export default function Home() {
     {
       id: 1,
       subTitle: "Dự án 01",
-      title: "Hệ thống Đặt vé xe",
+      title: "Hệ Thống Đặt Vé Xe",
       shortDesc: "Hệ thống hỗ trợ quản lý quy trình phân phối vé xe khách, đặt chỗ trước và giám sát doanh thu tổng cục thời gian thực.",
       codeSnippet: `// Database Connection & Ticket Mapping
 import java.sql.Connection;
@@ -61,7 +61,7 @@ public class TicketSystem {
     {
       id: 2,
       subTitle: "Dự án 02",
-      title: "Web Quản lý kho hàng",
+      title: "Web Quản Lý Kho Hàng",
       shortDesc: "Ứng dụng nền tảng Web cho phép cập nhật, theo dõi lượng vật tư xuất nhập kho và lập báo cáo tự động cho thủ kho.",
       codeSnippet: `// Inventory Analytics Hooks
 import React, { useState, useEffect } from 'react';
@@ -262,6 +262,7 @@ export const InventoryDashboard = () => {
         ></div>
       )}
 
+      {/* ĐÃ ĐẢO THỨ TỰ THANH MENU: DỰ ÁN TRƯỚC - KINH NGHIỆM SAU ĐÚNG THEO PHÂN KHỐI WEB */}
       {!isLoading && (
         <nav className="fixed top-0 left-0 right-0 z-40 bg-[#02050f]/80 backdrop-blur-md border-b border-cyan-500/10 px-4 md:px-6 py-4 shadow-lg flex justify-between items-center">
           <div className="text-2xl md:text-3xl font-black tracking-widest text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] select-none">
@@ -270,30 +271,37 @@ export const InventoryDashboard = () => {
           <div className="flex gap-4 sm:gap-7 text-sm md:text-[16px] font-black tracking-[0.12em] uppercase">
             <button onClick={() => scrollToSection('gioi-thieu')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200">Giới thiệu</button>
             <button onClick={() => scrollToSection('hoc-van')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200">Học Vấn</button>
-            <button onClick={() => scrollToSection('kinh-nghiem')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200">Kinh Nghiệm</button>
             <button onClick={() => scrollToSection('du-an')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200">Dự Án</button>
+            <button onClick={() => scrollToSection('kinh-nghiem')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Kinh Nghiệm</button>
             <button onClick={() => scrollToSection('lien-he')} className="text-slate-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200">Liên Hệ</button>
           </div>
         </nav>
       )}
 
-      {/* 4. TĂNG KÍCH THƯỚC LOADING SCREEN LÊN 5% VÀ TĂNG ĐỘ SÁNG MÀU gradient SẮC NÉT */}
       {isLoading && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center font-mono text-cyan-400 select-none bg-[#01040a] px-4">
-          <div className="transition-all transform scale-[1.05] flex flex-col items-center justify-center">
-            <div className="relative w-28 h-28 md:w-32 md:h-32 mb-8">
-              <div className="absolute inset-0 rounded-full border-4 border-cyan-400/20 shadow-[0_0_20px_rgba(34,211,238,0.2)]"></div>
-              <div className="absolute inset-0 rounded-full border-4 border-t-cyan-300 border-r-emerald-300 animate-spin shadow-[0_0_30px_rgba(34,211,238,0.8)]"></div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#01040a] px-4 select-none font-mono text-blue-400">
+          <div className="transition-all transform scale-[1.05] flex flex-col items-center justify-center text-center w-full max-w-md">
+            
+            <div className="relative w-32 h-32 md:w-36 md:h-36 mb-8 flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full border-[8px] border-t-blue-500 border-r-cyan-400 border-b-blue-600 border-l-cyan-500 animate-spin shadow-[0_0_40px_rgba(34,211,238,0.9)]"></div>
             </div>
-            <div className="text-lg md:text-2xl font-black tracking-[0.25em] mb-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-emerald-300 drop-shadow-[0_0_12px_rgba(34,211,238,0.5)] uppercase text-center">
-              INITIALIZING SYSTEM
+
+            <div className="text-3xl md:text-4xl font-extrabold tracking-[0.1em] mb-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.9)] uppercase font-sans">
+              TIEN DUNG
             </div>
-            <div className="text-5xl md:text-6xl font-black tracking-widest text-white mb-6 drop-shadow-[0_0_25px_rgba(34,211,238,0.8)] animate-pulse">
-              {progress}<span className="text-cyan-300 text-3xl ml-0.5">%</span>
+
+            <div className="text-xs md:text-sm font-bold tracking-[0.18em] mb-5 text-blue-400/90 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)] uppercase">
+              INITIALIZING SYSTEM ^_^
             </div>
-            <div className="w-68 md:w-76 h-3 bg-slate-950 border border-cyan-400/40 rounded-full overflow-hidden p-[1px] shadow-[0_0_10px_rgba(34,211,238,0.2)]">
-              <div className="h-full bg-gradient-to-r from-cyan-300 via-blue-400 to-emerald-300 rounded-full transition-all duration-300 ease-out" style={{ width: `${progress}%` }}></div>
+
+            <div className="text-5xl md:text-6xl font-black tracking-widest text-white mb-6 drop-shadow-[0_0_25px_rgba(59,130,246,0.8)]">
+              {progress}<span className="text-blue-400 text-3xl ml-0.5">%</span>
             </div>
+
+            <div className="w-68 md:w-76 h-3 bg-slate-950 border border-blue-500/40 rounded-full overflow-hidden p-[1px] shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+              <div className="h-full bg-gradient-to-r from-blue-600 via-blue-400 via-cyan-400 to-yellow-400/80 rounded-full transition-all duration-300 ease-out" style={{ width: `${progress}%` }}></div>
+            </div>
+
           </div>
         </div>
       )}
@@ -306,7 +314,6 @@ export const InventoryDashboard = () => {
         
         <header id="gioi-thieu" className="relative pb-8 md:pb-14 px-4 flex flex-col items-center justify-center text-center scroll-mt-24">
           
-          {/* 1. SỬA LỖI RESPONSIVE: XÓA hidden lg:block ĐỂ 2 ẢNH FOURZE TỰ ĐỘNG THU NHỎ VÀ HIỂN THỊ TỐT TRÊN ĐIỆN THOẠI */}
           <div className="absolute bottom-4 left-2 md:left-4 w-20 h-14 sm:w-28 sm:h-20 md:w-44 md:h-28 lg:w-56 lg:h-40 opacity-90 z-0 pointer-events-none drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]">
             <img src="/images/Icon-fourze.png" alt="Fourze Left Element" className="w-full h-full object-contain" />
           </div>
@@ -352,7 +359,6 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
-        {/* 3. ĐỔI TIÊU ĐỀ TRÌNH ĐỘ HỌC VẤN SANG MÀU NÂU CAM SÁNG, RÕ NÉT VÀ ĐẸP MẮT */}
         <section id="hoc-van" className="max-w-4xl mx-auto py-6 px-4 scroll-mt-24">
           <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-[#d97706] mb-8 drop-shadow-[0_0_12px_rgba(217,119,6,0.6)]">
             Trình Độ Học Vấn
@@ -382,7 +388,6 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
-        {/* 1. SỬA LỖI RESPONSIVE: ĐẢM BẢO CHẠY ĐẸP TRÊN MOBILE CHO KHỐI CÔNG NGHỆ (BAO GỒM SQL SERVER VÀ FIGMA) */}
         <section className="py-6 px-4">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-cyan-400 mb-8 drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]">
@@ -432,6 +437,7 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
+        {/* PHÂN KHỐI DỰ ÁN NẰM TRÊN THEO ĐÚNG CẤU TRÚC GỐC */}
         <section id="du-an" className="max-w-6xl mx-auto py-10 px-4 scroll-mt-24">
           <h3 className="text-2xl md:text-4xl font-black text-white mb-6 text-center uppercase tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">
             Dự Án Đã Thực Hiện
@@ -485,28 +491,24 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
-        {/* 2. TÁCH KHỐI KINH NGHIỆM THÀNH MỤC RIÊNG - TĂNG SIZE CHỮ 5% TO RÕ ĐẸP MẮT */}
+        {/* PHÂN KHỐI KINH NGHIỆM NẰM DƯỚI KHỐI DỰ ÁN */}
         <section id="kinh-nghiem" className="max-w-4xl mx-auto py-10 px-4 scroll-mt-24">
           <h3 className="text-2xl md:text-3xl font-black text-center uppercase tracking-[0.2em] text-cyan-400 mb-8 drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]">
             Kinh Nghiệm
           </h3>
           <div className="bg-slate-900/95 backdrop-blur-md border border-cyan-400/30 p-6 md:p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
             <div className="flex flex-col items-center justify-center text-center mb-5 border-b border-cyan-500/15 pb-4">
-              {/* Thực tập sinh kỹ thuật mạng & hệ thống tăng kích thước 5% */}
               <h4 className="text-[14.5px] md:text-[17px] font-bold text-slate-300 uppercase tracking-wide">
                 Thực tập sinh kỹ thuật mạng & hệ thống:
               </h4>
-              {/* 5. Công ty DV&GP Nguyên Khanh tăng 5% kích cỡ, màu sắc tươi sáng nét hơn */}
               <p className="text-[#f59e0b] font-black text-lg md:text-2xl tracking-widest mt-2 uppercase drop-shadow-[0_0_15px_rgba(245,158,11,0.5)] animate-pulse">
                 Công ty DV&GP Nguyên Khanh
               </p>
             </div>
             
-            {/* Nội dung mô tả tăng 5% kích cỡ chữ */}
             <p className="text-slate-300 font-semibold mb-3 text-[13.5px] md:text-[14.5px] pl-2 leading-relaxed">
               Trực tiếp tham gia khảo sát, triển khai and bàn giao hạ tầng kỹ thuật công nghệ cho các cơ sở giáo dục:
             </p>
-            {/* Các gạch đầu dòng tăng 5% kích cỡ chữ */}
             <ul className="list-disc list-inside text-slate-300 space-y-2 ml-2 text-[13.5px] md:text-[14.5px] font-semibold leading-relaxed">
               <li>Lắp đặt hệ thống đường dây mạng truyền tải dữ liệu và Camera tại Trường THCS Bình Lợi Trung.</li>
               <li>Lắp đặt cấu trúc thiết bị phần cứng and thiết lập hệ thống loa phát thanh tại Trường Mầm Non 29.</li>
@@ -675,14 +677,15 @@ export const InventoryDashboard = () => {
           </div>
         </section>
 
+        {/* ĐẢO THỨ TỰ FOOTER ĐIỀU HƯỚNG DƯỚI CUỐI TRANG ĐỒNG BỘ: DỰ ÁN TRƯỚC - KINH NGHIỆM SAU */}
         <footer className="max-w-4xl mx-auto border-t border-slate-800/60 pt-6 px-4 mt-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-slate-400 text-center sm:text-left">
             <div>© 2026 Nguyễn Trần Tiến Dũng. Portfolio Modules.</div>
             
             <div className="flex flex-wrap justify-center gap-3 sm:gap-5 text-xs sm:text-sm font-extrabold uppercase tracking-wider">
               <button onClick={() => scrollToSection('gioi-thieu')} className="text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Giới thiệu</button>
-              <button onClick={() => scrollToSection('kinh-nghiem')} className="text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Kinh Nghiệm</button>
               <button onClick={() => scrollToSection('du-an')} className="text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Dự Án</button>
+              <button onClick={() => scrollToSection('kinh-nghiem')} className="text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.4)] transition-all duration-200">Kinh Nghiệm</button>
               <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-cyan-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-200 flex items-center gap-1">
                 <span>▲</span> Lên Đầu Trang
               </button>

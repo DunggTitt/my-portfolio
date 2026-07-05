@@ -290,7 +290,7 @@ export const InventoryDashboard = () => {
             </div>
 
             <div className="text-xs md:text-sm font-bold tracking-[0.18em] mb-5 text-blue-400/90 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)] uppercase">
-              INITIALIZING SYSTEM
+              INITIALIZING SYSTEM O_O
             </div>
 
             <div className="text-5xl md:text-6xl font-black tracking-widest text-white mb-6 drop-shadow-[0_0_25px_rgba(59,130,246,0.8)]">
@@ -664,8 +664,8 @@ export const InventoryDashboard = () => {
                   <div className="w-8 h-8 rounded-full bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center flex-shrink-0 text-base">📱</div>
                   <div>
                     <h4 className="text-white font-bold text-xs">Số điện thoại</h4>
-                    <a href="tel:0969267817" className="text-yellow-400 font-extrabold text-xs hover:text-yellow-300 transition">
-                      0969 267 817
+                    <a href="tel:+84969267817" className="text-yellow-400 font-extrabold text-xs hover:text-yellow-300 transition">
+                      +84 969 267 817
                     </a>
                   </div>
                 </div>
@@ -687,7 +687,7 @@ export const InventoryDashboard = () => {
                       <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                     </span>
                     <p className="text-xs font-black text-white uppercase tracking-widest">
-                      Sẵn sàng hợp tác
+                      Sẵn sàng hợp tác ^_^
                     </p>
                   </div>
                   
@@ -705,7 +705,7 @@ export const InventoryDashboard = () => {
                     </div>
 
                     <span className="text-white text-sm md:text-base font-black tracking-widest uppercase border-b border-transparent group-hover:border-cyan-400 group-hover:text-cyan-300 transition-all duration-300">
-                      FACEBOOK _
+                      FACEBOOK ....
                     </span>
                   </Link>
                 </div>
@@ -728,7 +728,7 @@ export const InventoryDashboard = () => {
             </div>
           </div>
         </footer>
-        
+
       </div>
     </div>
   );

@@ -157,12 +157,12 @@ export const InventoryDashboard = () => {
     { name: 'SQL Server Management Studio', imgSrc: '/logos/SQL_Server_Management_Studio.png' },
     { name: 'Apache NetBeans', imgSrc: '/logos/Apache_NetBeans.png' },
     { name: 'Eclipse', imgSrc: '/logos/Eclipse.png' },
-    { name: 'Visual Studio Code', imgSrc: '/logos/VS Code.png' },
+    { name: 'Visual Studio Code', imgSrc: '/logos/Visual_Studio_Code.png' },
     { name: 'Visual Studio', imgSrc: '/logos/Visual_Studio.png' },
     { name: 'Odoo ERP', imgSrc: '/logos/Odoo.png' },
     { name: 'n8n.io - Workflow Automation', imgSrc: '/logos/n8n.png' },
     { name: 'Vercel', imgSrc: '/logos/Vercel-Logo.png' },
-    { name: 'VMware Workstation Pro', imgSrc: '/logos/Vmware.png' },
+    { name: 'VMware Workstation Pro', imgSrc: '/logos/VMware.png' },
     { name: 'Figma', imgSrc: '/logos/Figma.png' },
     { name: 'Canva Design', imgSrc: '/logos/Canva.png' }
   ];

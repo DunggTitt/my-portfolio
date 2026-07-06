@@ -168,10 +168,10 @@ export const InventoryDashboard = () => {
   ];
 
   const showcaseTop = [
-    '/logos/HTML-CSS-JS.png', '/logos/React.png', '/logos/Java.png', '/logos/Cpp.png', '/logos/MySQL.png', '/logos/sql_server_management_studio.png', '/logos/VS Code.png', '/logos/Odoo.png'
+    '/logos/HTML-CSS-JS.png', '/logos/React.png', '/logos/Java.png', '/logos/Cpp.png', '/logos/MySQL.png', '/logos/SQL_Server_Management_Studio.png', '/logos/Visual_Studio_Code.png', '/logos/Odoo.png'
   ];
   const showcaseBottom = [
-    '/logos/Apache_NetBeans.png', '/logos/Eclipse.png', '/logos/Visual_Studio.png', '/logos/n8n.png', '/logos/Vercel-Logo.png', '/logos/Vmware.png', '/logos/figma.png', '/logos/Canva.png'
+    '/logos/Apache_NetBeans.png', '/logos/Eclipse.png', '/logos/Visual_Studio.png', '/logos/n8n.png', '/logos/Vercel-Logo.png', '/logos/VMware.png', '/logos/Figma.png', '/logos/Canva.png'
   ];
 
   const scrollToSection = (id: string) => {
